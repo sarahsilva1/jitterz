@@ -1,0 +1,20 @@
+{{> header }}
+{{> menumenu }}
+
+<title>Cold Drinks</title>
+
+  <div class="row">
+
+  {{# each Product }}
+   <div class="col-md-4 ">
+       <div class="thumbnail">
+         <center><a href="item/{{this.title}}"><img src="{{ this.imagePath }}" alt="..." class="img-responsive"></a><center>
+           <div class="caption">
+                 <a href="item/{{this.title}}"><h3>{{ this.title }}</h3></a>
+
+           </div>
+       </div>
+   </div>
+{{/each}}
+
+{{> footer }}

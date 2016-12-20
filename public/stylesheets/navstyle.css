@@ -1,0 +1,97 @@
+#entireNavbar{
+  position: fixed;
+  position: absolute;
+  background-color: #CFB055 !important;
+}
+.dropdown:hover {
+  color: blue !important;
+}
+
+.navbar-header{
+  /*background-color: #CFB055 !important;*/
+  /*gold*/
+}
+
+.navbar-collapse{
+  background-color: white;
+  /*gold*/
+}
+
+.dropdown-toggle{
+	color: white;
+  /*background-color: #CFB055 !important;*/
+  /*gold*/
+}
+.dropdown-toggle{
+	color: white;
+  /*background-color: #CFB055 !important;*/
+  /*gold*/
+}
+
+.dropdown-toggle:hover{
+	color: #CFB055 !important;
+  /*background-color: #CFB055 !important;*/
+
+}
+
+.navbar-brand{
+font-size: 36px;
+/*font-family: "Times New Roman", Times, serif;*/
+font-weight: 300;
+color: black !important;
+}
+
+a .navbar-brand{
+font-size: 36px;
+font-weight: 300;
+color: #CFB055 !important;
+}
+
+.dropdown-menu {
+	min-width: 200px;
+}
+.dropdown-menu.columns-2 {
+	min-width: 400px;
+}
+.dropdown-menu.columns-3 {
+	min-width: 600px;
+}
+.dropdown-menu li a {
+	padding: 5px 15px;
+	font-weight: 300;
+}
+.multi-column-dropdown {
+	list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.multi-column-dropdown li a {
+	display: block;
+	clear: both;
+	line-height: 1.428571429;
+	color: #333;
+	white-space: normal;
+}
+.multi-column-dropdown li a:hover {
+	text-decoration: none;
+	color: #262626;
+	background-color: #999;
+}
+
+@media (max-width: 767px) {
+	.dropdown-menu.multi-column {
+		min-width: 240px !important;
+		overflow-x: hidden;
+	}
+}
+
+#colorstrip{
+    width: 100%; height: 2px;
+    border-style: solid;
+    border-color: #CFB055;
+    background-color: #CFB055;
+}
+
+#space{
+  visibility: hidden;
+}
