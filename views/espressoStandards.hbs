@@ -1,27 +1,18 @@
 {{> header }}
 {{> menumenu }}
 
-<title>Hot Drinks</title>
+<title>Espresso Standards</title>
+<h1>Espresso Standards</h1>
 
-<!-- Stripe functionality-->
-<!-- <div class="row">
-    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
-        <div id="success" class="alert alert-success" {{#if noMessages}}hidden{{/if}}>
-            {{ successMsg }}
-        </div>
-    </div>
-</div> -->
-<script> console.log('this works');</script>
+  <div class="row">
 
-
-<div class="row">
-
-{{# each Product }}
+  {{# each Product }}
    <div class="col-md-4 ">
        <div class="thumbnail">
          <center><a href="item/{{this.title}}"><img src="{{ this.imagePath }}" alt="..." class="img-responsive"></a><center>
            <div class="caption">
                  <a href="item/{{this.title}}"><h3>{{ this.title }}</h3></a>
+
            </div>
        </div>
    </div>

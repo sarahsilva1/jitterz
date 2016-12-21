@@ -147,26 +147,34 @@ router.get('/all', function(req, res, next) {
 });
 
 
-router.get('/hot', function(req, res, next) {
+router.get('/blended', function(req, res, next) {
   Product.find({'category' : 'hot', 'size' : 'small'},function(err, Product){
   console.log(Product.length);
-  res.render('hot', { title: 'Hot Drinks', Product: Product });
+  res.render('blended', { title: 'Hot Drinks', Product: Product });
 });
 });
 
-router.get('/cold', function(req, res, next) {
+router.get('/espressoStandards', function(req, res, next) {
   Product.find({'category' : 'cold', 'size' : 'small'},function(err, Product){
   console.log(Product.length);
-  res.render('cold', { title: 'Cold Drinks', Product: Product });
+  res.render('espressoStandards', { title: 'Espresso Standards', Product: Product });
 });
 });
 
-router.get('/food', function(req, res, next) {
+router.get('/specialties', function(req, res, next) {
   Product.find({'category' : 'food', 'size' : 'small'},function(err, Product){
   console.log(Product.length);
-  res.render('food', { title: 'Food Items', Product: Product });
+  res.render('specialties', { title: 'Specialties', Product: Product });
 });
 });
+
+router.get('/non-coffee', function(req, res, next) {
+  Product.find({'category' : 'food', 'size' : 'small'},function(err, Product){
+  console.log(Product.length);
+  res.render('non-coffee', { title: 'Non-Coffee', Product: Product });
+});
+});
+
 
 module.exports = router;
 
