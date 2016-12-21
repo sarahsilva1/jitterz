@@ -494,7 +494,7 @@ input[type="text"], [type="password"],[type="button"] {
 }
 
 .login-button:hover{
-  background-color:rgba(83,47,169,0.9);
+  background-color: red;
   -webkit-transition: background-color 300ms ease-out ;
     -moz-transition: background-color 300ms ease-out ;
     -o-transition: background-color 300ms ease-out ;
