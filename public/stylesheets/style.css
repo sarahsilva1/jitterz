@@ -1,6 +1,8 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: white;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 h2{
