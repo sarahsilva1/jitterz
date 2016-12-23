@@ -17,7 +17,7 @@ router.get('/item/:title', function(req,res){
 });
 
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Jitz' });
+  res.render('home', { title: 'Jitterz' });
 });
 
 router.get('/about', function(req, res, next) {
@@ -46,12 +46,11 @@ router.get('/order', function(req, res, next) {
 
 router.get('/add-to-cart/:id', function(req, res, next) {
     var productId = req.params.id;
-    /** If cart exists passes it to session otherwise passes an empty object*/
     var cart = new Cart(req.session.cart ? req.session.cart : {});
-    /** Finds product */
     Product.findById(productId, function(err, product) {
        if (err) {
-           return res.redirect('/');
+          //  return res.redirect('/');
+          console.log("there was an error! oh no!")
        }
         cart.add(product, product.id);
         req.session.cart = cart;
@@ -134,14 +133,14 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 
 router.get('/menu', function(req, res, next) {
   Product.find({'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
 });
 
 router.get('/all', function(req, res, next) {
-  Product.find({'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  Product.find({'price' : {$gt: 0} },function(err, Product){
+  console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
 });
@@ -149,28 +148,28 @@ router.get('/all', function(req, res, next) {
 
 router.get('/blended', function(req, res, next) {
   Product.find({'category' : 'hot', 'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  console.log(Product.length + " products");
   res.render('blended', { title: 'Hot Drinks', Product: Product });
 });
 });
 
 router.get('/espressoStandards', function(req, res, next) {
   Product.find({'category' : 'cold', 'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  console.log(Product.length + " products");
   res.render('espressoStandards', { title: 'Espresso Standards', Product: Product });
 });
 });
 
 router.get('/specialties', function(req, res, next) {
   Product.find({'category' : 'food', 'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  console.log(Product.length + " products");
   res.render('specialties', { title: 'Specialties', Product: Product });
 });
 });
 
 router.get('/non-coffee', function(req, res, next) {
-  Product.find({'category' : 'food', 'size' : 'small'},function(err, Product){
-  console.log(Product.length);
+  Product.find({'category' : 'non_coffee'},function(err, Product){
+  console.log(Product.length + " products");
   res.render('non-coffee', { title: 'Non-Coffee', Product: Product });
 });
 });

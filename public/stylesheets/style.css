@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #333333;
+  background-color: white;
 }
 
 h2{
@@ -14,13 +14,6 @@ h1{
   color: #CFB055;
   text-shadow: 2px 2px #ff0000;
   text-align: center;
-  padding-bottom: 15px;
-}
-
-p {
- text-indent: 50px;
- line-height: 130%;
- color: white;
 }
 
 video {
@@ -47,13 +40,13 @@ video {
   color: #CFB055;
   text-shadow: 3px 3px #ff0000;
   text-align: center;
-  padding-bottom: 10px;
+  margin-bottom: 200px;
+
 }
 
 #homeVideo {
   font-weight:100;
   padding-top: 150px;
-
   color: white;
   padding: 2rem;
   width: 100%;
@@ -63,7 +56,7 @@ video {
 
 #homeVideo button {
   display: block;
-  width: 80%;
+  /*width: 80%;*/
   padding: .4rem;
   border: none;
   margin: 1rem auto;
@@ -84,11 +77,11 @@ a:hover{
 }
 
 @media screen and (max-width: 500px) {
-  div{width:70%;}
+  /*div{width:70%;}*/
 }
-@media screen and (max-device-width: 800px) {
+@media screen and (max-device-width: 100%) {
   html { background: url(../Coffee-Shot/Snapshots/Coffee-Shot.jpg) #000 no-repeat center center fixed; }
-  #bgvid { display: none; }
+  /*#bgvid { display: none; }*/
 }
 
 
@@ -110,11 +103,10 @@ a:hover{
 
 .aboutText {
   font-size: 15px;
-  margin-top: 40px;
+  margin-top: 5%;
   text-indent: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 5%;
   line-height: 135%;
-  color: white;
 }
 
 p:link {
@@ -145,14 +137,10 @@ height: 90%;
 width: 90%;
 }
 
-#entireNavbar{
-  position: fixed !important;
-  position: absolute !important;
-}
 
 .allBodyContent {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .mapContainer{
@@ -224,34 +212,16 @@ width: 90%;
 .thumbnail .btn .btn-success {
   color: #F39C12 !important;
 }
-body {
-  /*padding: 50px;*/
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #333333;
-  /*dark gray*/
-}
+
 h2{
   text-align: center;
   padding-bottom: 10px;
 }
 p {
- text-indent: 50px;
  line-height: 130%;
  color: white;
 }
-.indented {
-  font-size: 16px;
-  text-indent: 20%;
-  line-height: 230%;
-}
-.aboutText {
-  font-size: 15px;
-  margin-top: 40px;
-  text-indent: 50px;
-  margin-bottom: 30px;
-  line-height: 135%;
-  color: white;
-}
+
 p:link {
   color: #CFB055;
 }
@@ -277,14 +247,7 @@ a {
   color: #CFB055;
   font-size: 80px;
 }
-#entireNavbar{
-  position: fixed !important;
-  position: absolute !important;
-}
-.allBodyContent {
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 .mapContainer{
   padding-left: 20px;
   padding-right: 20px;
