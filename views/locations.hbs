@@ -116,9 +116,14 @@ link = web;
 }
 </script>
 <style>
+body {
+  padding-left: 22%;
+}
     #locations {
         height:550px;
         width:800px;
+        text-align: center;
+        position: relative;
     }
     .gm-style-iw * {
         display: block;
@@ -134,13 +139,17 @@ link = web;
 </style>
 
 
-<div id="locationText">
-  <h1 style="color:#CFB055;">Jitterz Coffee Bar</h1>
-  <h3>1625 N. Conway Ave.</h3>
-  <h3>Mission, TX 78572</h3>
-  <h3>956.581.4147</h3>
+<div>
 
-  <div id='locations'></div>
+  <div id="locationText" style="color:#CFB055; position: relative;">
+    <h1 style="color:#CFB055; padding-left: -50%;">Jitterz Coffee Bar</h1>
+
+    <h3>1625 N. Conway Ave.</h3>
+    <h3>Mission, TX 78572</h3>
+    <h3>956.581.4147</h3>
+    <div id='locations'></div>
+  </div>
+</div>
 
 
 {{> footer }}

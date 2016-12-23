@@ -179,6 +179,14 @@ width: 90%;
 #locationText {
   font-size: 24px;
   text-align: center;
+  padding-right: 300px;
+
+}
+
+#locations {
+  font-size: 24px;
+  text-align: center;
+  padding-left: 100px;
 }
 
 .thumbnail{
