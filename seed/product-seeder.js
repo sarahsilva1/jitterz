@@ -1,6 +1,6 @@
 var Product = require('../models/product');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://sarahsilva1:441237pass@ds143608.mlab.com:43608/jitterz');
+mongoose.connect('mongodb://ja.cantu:jitzsquare@ds033126.mlab.com:33126/jitzsquare');
 var products = [{
   new Product({
       imagePath: 'https://s27.postimg.org/xzft1nij7/slow_bar.jpg',

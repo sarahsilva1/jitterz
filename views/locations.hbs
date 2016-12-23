@@ -2,12 +2,13 @@
 <title>Locations</title>
 
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCt6ph1fIz_4O8kmbR4y5gicaJZp9TVzLM&sensor=false&extension=.js'></script>
+
 <script>
     google.maps.event.addDomListener(window, 'load', init);
     var map;
     function init() {
         var mapOptions = {
-            center: new google.maps.LatLng(26.217768,-98.318501),
+            center: new google.maps.LatLng(26.225783,-98.247736),
             zoom: 14,
             zoomControl: true,
             zoomControlOptions: {
@@ -29,47 +30,39 @@
             },
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             styles: [
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [
-      { lightness: 100 },
-      { visibility: "simplified" }
-    ]
-  },{
-   "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#C6E2FF",
-            }
-        ]
-    }, {
-        "featureType": "poi",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#C5E3BF"
-            }
-        ]
-    },{
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#D1D1B8"
-            }
-        ]
-    }
+	{"featureType": "all",
+		"stylers":[
+			{"saturation": 0},
+			{"hue": "#e7ecf0"}
+		]
+	},
+	{"featureType": "road",
+		"stylers":[
+			{"saturation": -70}
+		]
+	},
+	{"featureType": "transit",
+		"stylers":[
+			{"visibility": "off"}
+		]
+	},
+	{"featureType": "poi",
+		"stylers":[
+			{"visibility": "off"}
+		]
+	},
+	{"featureType": "water",
+		"stylers":[
+			{"visibility": "simplified"},
+			{"saturation": -60}
+		]
+	}
 ],
         }
-        var mapElement = document.getElementById('jitzMap');
+        var mapElement = document.getElementById('locations');
         var map = new google.maps.Map(mapElement, mapOptions);
         var locations = [
-['CEED Cafe', '', 'Coming Soon!', 'undefined', 'undefined', 26.2120768, -98.31137000000001, 'https://mapbuildr.com/assets/img/markers/solid-pin-red.png'],['Jitterz', '1625 N. Conway Ave.  <br />Mission, TX 78572', '956.581.4147', 'undefined', 'undefined', 26.2228308, -98.3246006, 'https://mapbuildr.com/assets/img/markers/solid-pin-red.png']
+['Jitterz', 'undefined', '956.581.4147', 'undefined', 'https://jitterz.herokuapp.com', 26.2228262, -98.3245824, 'https://mapbuildr.com/assets/img/markers/default.png'],['CEED Cafe', 'Coming Soon!', '', 'undefined', 'https://jitz2.herokuapp.com/', 26.2120768, -98.31137, 'https://mapbuildr.com/assets/img/markers/default.png']
         ];
         for (i = 0; i < locations.length; i++) {
 			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
@@ -87,7 +80,12 @@
                 email: email,
                 web: web
             });
-link = '';            bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+if (web.substring(0, 7) != "http://") {
+link = "http://" + web;
+} else {
+link = web;
+}
+            bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
      }
  function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
       var infoWindowVisible = (function () {
@@ -105,7 +103,7 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
                    iw.close();
                    infoWindowVisible(false);
                } else {
-                   var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+desc+"<p><p>"+telephone+"<p></div>";
+                   var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+desc+"<p><p>"+telephone+"<p><a href='"+link+"'' >"+web+"<a></div>";
                    iw = new google.maps.InfoWindow({content:html});
                    iw.open(map,marker);
                    infoWindowVisible(true);
@@ -118,10 +116,9 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
 }
 </script>
 <style>
-    #jitzMap {
-        height:450px;
-        width:550px;
-        margin: auto;
+    #locations {
+        height:550px;
+        width:800px;
     }
     .gm-style-iw * {
         display: block;
@@ -136,11 +133,14 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
     }
 </style>
 
+
 <div id="locationText">
   <h1 style="color:#CFB055;">Jitterz Coffee Bar</h1>
   <h3>1625 N. Conway Ave.</h3>
   <h3>Mission, TX 78572</h3>
   <h3>956.581.4147</h3>
-<div id='jitzMap'></div>
+
+  <div id='locations'></div>
+
 
 {{> footer }}

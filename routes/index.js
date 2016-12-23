@@ -132,19 +132,18 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/menu', function(req, res, next) {
-  Product.find({'size' : 'small'},function(err, Product){
-  console.log(Product.length + " products");
-  res.render('shop/index', { title: 'Menu', Product: Product });
-});
-});
-
-router.get('/all', function(req, res, next) {
   Product.find({'price' : {$gt: 0} },function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
 });
-
+// this one shows only one of each item, not all sizes
+router.get('/all', function(req, res, next) {
+  Product.find({'price' : {$gt: 0}, 'size' : '12oz'},function(err, Product){
+  console.log(Product.length + " products");
+  res.render('shop/index', { title: 'Menu', Product: Product });
+});
+});
 
 router.get('/blended', function(req, res, next) {
   Product.find({'category' : 'hot', 'size' : 'small'},function(err, Product){
@@ -161,9 +160,9 @@ router.get('/espressoStandards', function(req, res, next) {
 });
 
 router.get('/specialties', function(req, res, next) {
-  Product.find({'category' : 'food', 'size' : 'small'},function(err, Product){
+  Product.find({'category' : 'iced_specialties' || 'hot_specialties'},function(err, Product){
   console.log(Product.length + " products");
-  res.render('specialties', { title: 'Specialties', Product: Product });
+  res.render('specialties', { title: 'specialties', Product: Product });
 });
 });
 

@@ -166,13 +166,9 @@ width: 90%;
     position:absolute;
 }
 
-.whiteText{
-  color: white;
-}
 
 
 #locationText {
-  color: white;
   font-size: 24px;
   text-align: center;
 }
@@ -219,7 +215,6 @@ h2{
 }
 p {
  line-height: 130%;
- color: white;
 }
 
 p:link {
@@ -268,14 +263,7 @@ a {
     width:100%;
     position:absolute;
 }
-.whiteText{
-  color: white;
-}
-#locationText {
-  color: white;
-  font-size: 24px;
-  text-align: center;
-}
+
 .list-group {
   padding-top: 100px;
   width: 100%;
