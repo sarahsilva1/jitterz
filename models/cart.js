@@ -3,14 +3,9 @@ module.exports = function Cart(oldCart) {
     /** Properties from last cart to new cart */
     this.items = oldCart.items || {};
     this.totalQty = oldCart.totalQty || 0;
-    this.subTotal = Number(oldCart.subTotal) || 0;
-    this.totalTax = Number(oldCart.totalTax) || 0;
-    this.totalPrice = Number(oldCart.totalPrice) || 0;
-
-    /** Totals rounded two places after point */
-    this.subTotalPrice = Number(this.subTotal).toFixed(2);
-    this.totalTaxPrice = Number(this.totalTax).toFixed(2);
-    this.grandTotalPrice = Number(this.totalPrice).toFixed(2);
+    this.subTotal = Math.round(Number(oldCart.subTotal) * Math.pow(10, 2))/Math.pow(10, 2) || 0;
+    this.totalTax = Math.round(Number(oldCart.totalTax) * Math.pow(10, 2))/Math.pow(10, 2) || 0;
+    this.totalPrice = Math.round(Number(oldCart.totalPrice) * Math.pow(10, 2))/Math.pow(10, 2) || 0;
 
     this.add = function(item, id) {
         var storedItem = this.items[id];
@@ -28,8 +23,8 @@ module.exports = function Cart(oldCart) {
             /** Updates total quantity,price and taxes */
             this.totalQty++;
             this.subTotal += Number(storedItem.item.price);
-            this.totalTax += Number(storedItem.item.price / 100 * 8.25);
-            this.totalPrice += Number(storedItem.item.price)+ (storedItem.item.price / 100 * 8.25);
+            this.totalTax += Number(storedItem.item.price * .0825);
+            this.totalPrice += Number(storedItem.item.price) + (storedItem.item.price * .0825);
 
 
       };
@@ -40,8 +35,8 @@ module.exports = function Cart(oldCart) {
         this.totalQty--;
 
         this.subTotal -= Number(this.items[id].item.price);
-        this.totalTax -= Number(this.items[id].item.price / 100 * 8.25);
-        this.totalPrice -= Number(this.items[id].item.price) + (this.items[id].item.price / 100 * 8.25);
+        this.totalTax -= Number(this.items[id].item.price * .0825);
+        this.totalPrice -= Number(this.items[id].item.price) + (this.items[id].item.price * .0825);
 
         if (this.items[id].qty <= 0) {
             delete this.items[id];
@@ -54,14 +49,14 @@ module.exports = function Cart(oldCart) {
 
         this.totalQty++;
         this.subTotal += Number(this.items[id].item.price);
-        this.totalTax += Number(this.items[id].item.price / 100 * 8.25);
-        this.totalPrice += Number(this.items[id].item.price) + (this.items[id].item.price / 100 * 8.25);
+        this.totalTax += Number(this.items[id].item.price * .0825);
+        this.totalPrice += Number(this.items[id].item.price) + (this.items[id].item.price * .0825);
     };
 
     this.removeItem = function(id) {
         this.subTotal -= Number(this.items[id].item.price * this.items[id].qty);
-        this.totalTax -= Number(this.items[id].item.price * this.items[id].qty / 100 * 8.25);
-        this.totalPrice -= Number(this.items[id].item.price * this.items[id].qty) + (this.items[id].item.price  * this.items[id].qty / 100 * 8.25);
+        this.totalTax -= Number(this.items[id].item.price * this.items[id].qty * .0825);
+        this.totalPrice -= Number(this.items[id].item.price * this.items[id].qty) + (this.items[id].item.price * .0825 * this.items[id].qty);
 
         this.totalQty -= this.items[id].qty;
         delete this.items[id];

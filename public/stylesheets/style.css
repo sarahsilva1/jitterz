@@ -33,6 +33,14 @@ video {
 .stopfade {
    opacity: .5;
 }
+.bigProduct{
+width: 80%;
+height: 90%;
+margin: 10%;
+border-style: solid;
+border-color: #CFB055;
+}
+
 #mainTitle {
   padding-top: 150px;
   font:"Lucida Grande", Helvetica, Arial, sans-serif !important;
@@ -278,15 +286,18 @@ a {
   width: 50%;
   text-align: center;
 }
-/*0o0o0o0o0o0o0o0o0o00o0o0o0o0o0*/
-/*0o0o0o0o0o0o0o0o0o00o0o0o0o0o0*/
-/*Item Modal Image*/
+.itemImage{
+  text-align: center;
+}
+
 #modalImg {
+    text-align: center;
     border-radius: 5px;
     cursor: pointer;
     width: 300px;
     transition: 0.3s;
     float: left;
+    padding-left: 5%;
 }
 
 #modalImg:hover {opacity: 0.7;}
@@ -378,16 +389,15 @@ a {
   float:right;
   font-size: 20px;
   text-indent: 50px;
-  width:50%;
   padding-bottom: 20px;
 }
 
 .itemButtons{
   font-size: 20px;
-  clear: left;
+  /*clear: left;*/
   clear: right;
   padding-bottom: 20px;
-  float: right;
+  /*float: right;*/
   padding-right: 20%;
   text-align:center;
 }
