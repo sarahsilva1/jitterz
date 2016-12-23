@@ -2,7 +2,7 @@
 <br>
 <div class="row">
 
-<div class="whiteText">
+<div style="margin-left: 5%; margin-right: 5%;">
   {{# each Product }}
   {{ var }}
   <span>
@@ -48,6 +48,8 @@
 <div class="itemButtons visible">
   {{# each Product }}
       <a href="/add-to-cart/{{this._id}}" class="btn btn-primary pull-right cap" role="button">{{ this.size }}  ${{ this.price }}</a>
+<br />
+<br />
     {{/each}}
 </div>
 

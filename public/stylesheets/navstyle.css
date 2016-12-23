@@ -3,6 +3,13 @@
   position: absolute;
   background-color: #CFB055 !important;
 }
+
+.navbar .in .nav li {
+   display: block;
+   float: none;
+   width:100%;
+}
+
 .dropdown:hover {
   color: blue !important;
 }
