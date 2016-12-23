@@ -31,7 +31,9 @@ router.get('/game', function(req, res, next) {
 router.get('/feedback', function(req, res, next) {
   res.render('feedback', { title: 'Feedback' });
 });
-
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Contact' });
+});
 router.get('/locations', function(req, res, next) {
   res.render('locations', { title: 'Locations' });
 });
@@ -132,7 +134,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/menu', function(req, res, next) {
-  Product.find({'price' : {$gt: 0} },function(err, Product){
+  Product.find({'price' : {$gt: 0}, 'size' : '12oz'},function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
@@ -146,23 +148,30 @@ router.get('/all', function(req, res, next) {
 });
 
 router.get('/blended', function(req, res, next) {
-  Product.find({'category' : 'hot', 'size' : 'small'},function(err, Product){
+  Product.find({'category' : 'blended'},function(err, Product){
   console.log(Product.length + " products");
   res.render('blended', { title: 'Hot Drinks', Product: Product });
 });
 });
 
 router.get('/espressoStandards', function(req, res, next) {
-  Product.find({'category' : 'cold', 'size' : 'small'},function(err, Product){
+  Product.find({'category' : 'espresso_standards'},function(err, Product){
   console.log(Product.length + " products");
   res.render('espressoStandards', { title: 'Espresso Standards', Product: Product });
 });
 });
 
-router.get('/specialties', function(req, res, next) {
-  Product.find({'category' : 'iced_specialties' || 'hot_specialties'},function(err, Product){
+router.get('/specialties_iced', function(req, res, next) {
+  Product.find({'category' : 'specialties_iced'},function(err, Product){
   console.log(Product.length + " products");
-  res.render('specialties', { title: 'specialties', Product: Product });
+  res.render('specialties_iced', { title: 'Iced Specialties', Product: Product });
+});
+});
+
+router.get('/specialties_hot', function(req, res, next) {
+  Product.find({'category' : 'specialties_hot'},function(err, Product){
+  console.log(Product.length + " products");
+  res.render('specialties_hot', { title: 'Hot Specialties', Product: Product });
 });
 });
 

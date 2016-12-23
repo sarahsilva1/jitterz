@@ -179,7 +179,7 @@ var products = [{
       price: 2.75
   }),
   new Product({
-      imagePath: 'https://cdn.pixabay.com/photo/2016/10/14/18/21/tee-1740871_1280.jpg',
+      imagePath: 'https://www.totaltea.net/assets/images/photo_of_teacup_-_postcard_-_half_size_gdhp.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
@@ -187,7 +187,7 @@ var products = [{
       price: 2.00
   }),
   new Product({
-    imagePath: 'https://cdn.pixabay.com/photo/2016/10/14/18/21/tee-1740871_1280.jpg',
+    imagePath: 'https://www.totaltea.net/assets/images/photo_of_teacup_-_postcard_-_half_size_gdhp.jpg',
       title: 'Tea',
       category: 'non_coffee',
       description: 'Choose from a variety of seasonal tea flavors.  Available sweetened or unsweetened.',
