@@ -1,7 +1,7 @@
 var Product = require('../models/product');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://ja.cantu:jitzsquare@ds033126.mlab.com:33126/jitzsquare');
-var products = [{
+var products = [
   new Product({
       imagePath: 'https://s27.postimg.org/xzft1nij7/slow_bar.jpg',
       title: 'Slow Bar Coffee',
@@ -252,7 +252,7 @@ var products = [{
   }),
   new Product({
     imagePath: 'https://s27.postimg.org/7d3ccoec3/oreo_ice_cream_chip.jpg',
-      title: 'Orea Latte',
+      title: 'Oreo Latte',
       category: 'blended',
       description: 'Blended espresso, milk, Oreo cookies, and ice cream.',
       size: 'one_size',
@@ -310,11 +310,11 @@ var products = [{
     imagePath: 'https://s27.postimg.org/8vu53wvir/affogato.jpg',
       title: 'Affogato',
       category: 'espresso_standards',
-      description: 'An affogato is a coffee-based dessert. It includes a scoop of vanilla ice cream topped or "drowned" with a shot of hot espresso.'
+      description: 'An affogato is a coffee-based dessert. It includes a scoop of vanilla ice cream topped or "drowned" with a shot of hot espresso.',
       size: 'one_size',
       price: 4.00
-  })
-}];
+  }),
+];
 
 
 /** Loops through products array */
@@ -329,6 +329,7 @@ for (var i = 0; i < products.length; i++) {
         }
     });
 }
+console.log('Your items have been added!')
 
 
 /** Function to disconnect from database */

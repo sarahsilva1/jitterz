@@ -134,7 +134,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
 });
 
 router.get('/menu', function(req, res, next) {
-  Product.find({'price' : {$gt: 0}, 'size' : '12oz'},function(err, Product){
+  Product.find({'price' : {$gt: 0}, 'size' : '16oz' || 'one_size' },function(err, Product){
   console.log(Product.length + " products");
   res.render('shop/index', { title: 'Menu', Product: Product });
 });
@@ -150,7 +150,7 @@ router.get('/all', function(req, res, next) {
 router.get('/blended', function(req, res, next) {
   Product.find({'category' : 'blended'},function(err, Product){
   console.log(Product.length + " products");
-  res.render('blended', { title: 'Hot Drinks', Product: Product });
+  res.render('blended', { title: 'Blended Drinks', Product: Product });
 });
 });
 

@@ -304,10 +304,8 @@ a {
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    width: 300px;
+    width: 95%;
     transition: 0.3s;
-    float: left;
-    padding-left: 5%;
 }
 
 #modalImg:hover {opacity: 0.7;}
